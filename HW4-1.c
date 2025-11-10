@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-double sum(int a[], int len) { // ¹è¿­ÀÇ ÇÕ
+double sum(int a[], int len) { // ë°°ì—´ì˜ í•©
     double s = 0;
     for (int i = 0; i < len; i++) {
         s += a[i];
@@ -8,25 +8,25 @@ double sum(int a[], int len) { // ¹è¿­ÀÇ ÇÕ
     return s;
 }
 
-double mean(int a[], int len) { // ¹è¿­ÀÇ Æò±Õ
+double mean(int a[], int len) { // ë°°ì—´ì˜ í‰ê· 
     return sum(a, len) / len;
 }
 
-double variance(int a[], int len) { // ¹è¿­ÀÇ ºĞ»ê
+double variance(int a[], int len) { // ë°°ì—´ì˜ ë¶„ì‚°
     double m = mean(a, len);
     double sumOfDevSquare = 0;
 
     for (int i = 0; i < len; i++) {
-        double dev = a[i] - m;            // ÆíÂ÷
-        sumOfDevSquare += dev * dev;      // ÆíÂ÷ Á¦°öÀÇ ÇÕ
+        double dev = a[i] - m;            // í¸ì°¨
+        sumOfDevSquare += dev * dev;      // í¸ì°¨ ì œê³±ì˜ í•©
     }
 
-    return sumOfDevSquare / len; // ºĞ»ê = ÆíÂ÷ Á¦°öÀÇ Æò±Õ
+    return sumOfDevSquare / len; // ë¶„ì‚° = í¸ì°¨ ì œê³±ì˜ í‰ê· 
 }
 
 int main(void) {
     int a[] = { 10, 20, 30, 40, 50, 60 };
-    int len = sizeof(a) / sizeof(a[0]); // ¹è¿­ÀÇ ±æÀÌ
+    int len = sizeof(a) / sizeof(a[0]); // ë°°ì—´ì˜ ê¸¸ì´
 
     printf("sum: %.6f\n", sum(a, len));
     printf("mean: %.6f\n", mean(a, len));
